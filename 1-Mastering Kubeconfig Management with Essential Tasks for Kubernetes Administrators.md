@@ -1,4 +1,5 @@
 ![kubeconfig](pics/1-kubeconfig.png)
+
 To effectively master the `kubeconfig` and its usage within Kubernetes, we can delve into specific tasks and commands that Site Reliability Engineers (SREs) frequently encounter. Here's an enriched and detailed breakdown of the mentioned tasks, complete with examples and recommended commands:
 
 **Task 1: Obtaining the Kubeconfig File**
@@ -12,6 +13,7 @@ export KUBECONFIG=/path/to/your/kubeconfig
 ```
 
 **Task 2: Managing Users and Contexts**
+
 Managing different users and contexts within a single cluster and merging multiple `kubeconfig` files into one are common tasks.
 
 **Action Steps:**
@@ -154,6 +156,7 @@ kubectl config use-context default --kubeconfig=customer-kubeconfig
 ```
 
 **Task5: Update the kubeconfig File after certificate renewal**
+
 Renewing certificates on the control plane nodes in a Kubernetes cluster requires updating the `kubeconfig` file to reflect the changes, especially if the API server's certificate has been renewed.
 1. Replace CA Certificate:
    After renewing the CA certificate, you need to update the `kubeconfig` file to trust the new CA. This step involves replacing the CA certificate in the `kubeconfig` file with the new one. You can manually edit the `kubeconfig` file and replace the content of `certificate-authority-data` with the base64 encoded form of your new CA certificate. Alternatively, use the following command if you have the path to the new CA certificate:
