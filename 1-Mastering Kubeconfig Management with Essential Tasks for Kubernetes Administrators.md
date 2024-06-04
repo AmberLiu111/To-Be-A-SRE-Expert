@@ -31,6 +31,8 @@ kubectl config view --merge --flatten > merged_kubeconfig
 3. If you prefer not to merge, use tools like `kubectx` and `kubens` for switching between clusters and namespaces.
 
 **Task 3: Setting up CI/CD Users and retrieving its Kubeconfig info**
+
+**Action Steps:**
 1. Create a `ServiceAccount` and bind it to a `ClusterRole` using a `ClusterRoleBinding` for broad permissions across namespaces:
 
 ```
@@ -93,6 +95,8 @@ kubectl get secret gitlab-token -o json | jq .data.token -r | base64 --decode
 These details will enable secure communication between your CI/CD server and the Kubernetes cluster, facilitating automated deployment processes.
 
 **Task 4: Granting Namespace-specific Permissions kubeconfig**
+
+**Action Steps:**
 1. Creating RABC for a customer that limits them to a specific namespace involves setting roles and role bindings.
 ```
 apiVersion: v1
@@ -158,6 +162,7 @@ kubectl config use-context default --kubeconfig=customer-kubeconfig
 **Task5: Update the kubeconfig File after certificate renewal**
 
 Renewing certificates on the control plane nodes in a Kubernetes cluster requires updating the `kubeconfig` file to reflect the changes, especially if the API server's certificate has been renewed.
+**Action Steps:**
 1. Replace CA Certificate:
    After renewing the CA certificate, you need to update the `kubeconfig` file to trust the new CA. This step involves replacing the CA certificate in the `kubeconfig` file with the new one. You can manually edit the `kubeconfig` file and replace the content of `certificate-authority-data` with the base64 encoded form of your new CA certificate. Alternatively, use the following command if you have the path to the new CA certificate:
 ```
