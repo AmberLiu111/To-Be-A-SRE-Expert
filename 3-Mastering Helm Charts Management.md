@@ -1,9 +1,8 @@
 ![3-Helm.png](pics/3-Helm.png)
+
 To effectively master the helm charts and its usage within Kubernetes, we can delve into specific sections and commands that Site Reliability Engineers (SREs) frequently encounter. Here's a detailed breakdown of the mentioned sections:
 
 ## **Section 1: Essential Helm Commands**
-
-### **Core Helm Commands for Daily Use**
 
 #### **Adding Helm Repositories**
 
@@ -70,7 +69,7 @@ helm fetch stable/pgadmin --untar
 
 For a visual and comprehensive command reference, see the [Helm Commands Cheat Sheet](https://phoenixnap.com/kb/helm-commands-cheat-sheet).
 
-## **Section 2: Managing CRDs with Helm Charts
+## **Section 2: Managing CRDs with Helm Charts**
 
 CRDs are typically housed within a Helm chart in a directory named `crds/`. The placement of CRDs in this specific directory ensures that they are installed or upgraded in the Kubernetes cluster prior to any dependent resources. This preemptive action prevents errors during the installation of dependent resources that assume the CRDs already exist.
 
@@ -86,7 +85,7 @@ CRDs are typically housed within a Helm chart in a directory named `crds/`. The 
 - **Version Compatibility**: Ensure that the CRD definitions are compatible with the Kubernetes cluster version to avoid deployment issues.
 
 
-## **Section 3: Considerations on Helm Chart Management **
+## **Section 3: Considerations on Helm Chart Management**
 
 ### **Namespace and Release Management**
 
