@@ -81,7 +81,7 @@ CRDs are typically housed within a Helm chart in a directory named `crds/`. The 
 #### **Key Considerations for CRD Management**:
 - **Helm Upgrades**: CRDs are not upgraded by Helm when the chart is upgraded. This behavior prevents accidental changes that could be disruptive or destructive, considering that CRD changes can impact existing resources:
 - **Avoiding Resource Orphans** :When a Helm release is deleted, the CRDs are not removed, which means any custom resources created will remain as orphans unless manually cleaned up
-- - **CRD Updates and Management**: Direct updates to CRDs via Helm are risky due to their potential cluster-wide impact. It is advisable to handle CRD updates manually or through specific operational workflows to mitigate risks.
+- **CRD Updates and Management**: Direct updates to CRDs via Helm are risky due to their potential cluster-wide impact. It is advisable to handle CRD updates manually or through specific operational workflows to mitigate risks.
 - **Version Compatibility**: Ensure that the CRD definitions are compatible with the Kubernetes cluster version to avoid deployment issues.
 
 
